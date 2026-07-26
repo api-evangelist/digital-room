@@ -1,8 +1,23 @@
 aid: digital-room
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/digital-room.png
 name: Digital Room
-description: Digital Room is a company surfaced as a portfolio company of insight-partners and added to
-  the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: Digital Room is a marketing and printing services company that for nearly three decades has
+  helped small and medium-sized businesses reach customers, promote products, and build their brands.
+  It operates a family of online printing and marketing brands serving SMBs with print, signage, and
+  promotional products. Backed by Insight Partners, it was added to the API Evangelist network as a
+  portfolio company. As of this enrichment pass the company publishes no public developer API, developer
+  portal, or API documentation; this profile captures its identity and domain-security posture.
 url: https://raw.githubusercontent.com/api-evangelist/digital-room/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,9 +27,15 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
+- Marketing
+- Printing
+- Print
+- Ecommerce
+- Small Business
+- Promotional Products
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -22,5 +43,12 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/digital-room-domain-security.yml
 - type: Website
   url: http://www.digitalroominc.com/
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
