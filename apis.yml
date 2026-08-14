@@ -12,12 +12,17 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/digital-room.png
 name: Digital Room
-description: Digital Room is a marketing and printing services company that for nearly three decades has
+description: Digital Room is an e-commerce and manufacturing company that for nearly three decades has
   helped small and medium-sized businesses reach customers, promote products, and build their brands.
-  It operates a family of online printing and marketing brands serving SMBs with print, signage, and
-  promotional products. Backed by Insight Partners, it was added to the API Evangelist network as a
-  portfolio company. As of this enrichment pass the company publishes no public developer API, developer
-  portal, or API documentation; this profile captures its identity and domain-security posture.
+  It sells customized marketing products through ten uniquely branded storefronts — UPrinting,
+  Signs.com, NextDayFlyers, PrintPlace, PrintRunner, eSigns, 48HourPrint, LogoSportswear, Packlane and
+  Packola — backed by purpose-built ordering and design software and a coast-to-coast production network
+  of nine U.S. facilities plus two in the Philippines, covering print, signage, packaging, apparel and
+  promotional products. Sycamore Partners acquired the company from H.I.G. Capital in December 2021;
+  Insight Partners is also an investor, which is how it entered the API Evangelist network. Digital Room
+  publishes no public API, developer portal, OpenAPI definition, MCP server or agent card. Its one
+  machine-readable agent surface is llms.txt — all ten brand storefronts serve a substantive, hand-authored
+  file, several with explicit "For AI Agents" routing instructions, while the corporate host serves none.
 url: https://raw.githubusercontent.com/api-evangelist/digital-room/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -27,7 +32,7 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-18'
+modified: '2026-08-13'
 tags:
 - Company
 - Marketing
@@ -36,6 +41,10 @@ tags:
 - Ecommerce
 - Small Business
 - Promotional Products
+- Packaging
+- Signage
+- Apparel
+- Manufacturing
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -47,8 +56,35 @@ common:
   url: security/digital-room-domain-security.yml
 - type: Website
   url: http://www.digitalroominc.com/
+- type: LLMsTxt
+  url: llms/digital-room-llms.txt
+- type: PrivacyPolicy
+  url: https://www.digitalroominc.com/privacy-policy.html
+- type: Support
+  url: https://www.digitalroominc.com/contact-us.html
+- type: GitHubOrganization
+  url: https://github.com/Packlane
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
+  date: '2026-08-13'
+  status: minimal
+  artifacts_added: 16
   pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: Digital Room manufactures and sells physical print, signage, packaging and apparel through ten
+    consumer storefronts — its software is the checkout, not the product — so there is no /api,
+    /developer or /developers path anywhere on the corporate site, and the one partner channel, the
+    eSigns broker/reseller program, is a checkout discount code that names no API, feed or EDI path.
+  evidence:
+  - url: https://www.digitalroominc.com/api
+    status: 404
+  - url: https://www.digitalroominc.com/developers
+    status: 404
+  - url: https://www.uprinting.com/openapi.json
+    status: 404
+  - url: https://www.digitalroominc.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.uprinting.com/llms.txt
+    status: 200
+  checked: '2026-08-13'
