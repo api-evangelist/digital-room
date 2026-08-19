@@ -1,0 +1,17 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.digitalroominc.com/
+note: >-
+  Digital Room publishes no API, so there are no documented rate limits and no runtime rate-limit
+  response headers to observe. No `RateLimits` pointer is wired into apis.yml — this file records a
+  measured zero, not a published limit policy.
+limit_count: 0
+limits: []
+headers: []
+searched:
+- url: https://www.digitalroominc.com/
+  status: 200
+- url: https://www.digitalroominc.com/developers
+  status: 404
+- url: https://www.uprinting.com/api
+  status: 404

@@ -1,0 +1,23 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.digitalroominc.com/our-brands.html
+note: >-
+  Digital Room publishes no API and therefore no API plans, tiers, quotas or developer pricing.
+  Its ten brand storefronts price physical print products per-item through a retail quote/checkout
+  flow (Signs.com, for example, exposes a Price Calculator at
+  https://www.signs.com/price-calculator/), which is consumer commerce, not an API plan surface.
+  No `Plans` pointer is wired into apis.yml — this file records a measured zero, not a published
+  plan catalog.
+plan_count: 0
+plans: []
+searched:
+- url: https://www.digitalroominc.com/our-brands.html
+  status: 200
+  finding: brand index only; no developer, API, or partner pricing
+- url: https://www.digitalroominc.com/api
+  status: 404
+- url: https://www.esigns.com/signs-101/broker-reseller-program.html
+  status: 200
+  finding: >-
+    broker/reseller program is a discount code applied at normal checkout; the page names no API,
+    data feed, XML/CSV feed, EDI, or programmatic ordering path

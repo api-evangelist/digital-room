@@ -1,0 +1,55 @@
+# Digital Room
+
+> Digital Room is an e-commerce and manufacturing company that has, for nearly three decades, sold
+> customized marketing products to small and medium-sized businesses through a portfolio of ten
+> uniquely branded storefronts. It designs its own purpose-built ordering and design software and
+> runs a coast-to-coast production network — nine U.S. facilities plus two in the Philippines —
+> printing business cards, flyers, banners, yard signs, decals, packaging, apparel and promotional
+> products, some delivered in as few as two days. Digital Room is majority-owned by Sycamore
+> Partners (acquired from H.I.G. Capital in December 2021); Insight Partners is also an investor.
+
+**Digital Room publishes no public API, developer portal, or API documentation.** There is no
+OpenAPI or Swagger definition, no GraphQL endpoint, no MCP server, no A2A agent card, and nothing
+served under `/.well-known/` on the corporate host or any brand host. The company's only
+machine-readable agent surface is the `llms.txt` file each of its ten brand storefronts publishes —
+product and content indexes written for AI agents and RAG crawlers, several with explicit
+"For AI Agents" routing instructions. This file is a generated company-level index of that surface;
+it is not published by Digital Room.
+
+## Company
+- [Digital Room](https://www.digitalroominc.com/): Corporate site for the parent company.
+- [What We Do](https://www.digitalroominc.com/what-we-do.html): E-commerce technology plus in-house manufacturing; describes the U.S. and Philippines facility network.
+- [Our Brands](https://www.digitalroominc.com/our-brands.html): Canonical index of the ten consumer storefronts Digital Room operates.
+- [Our Products](https://www.digitalroominc.com/our-products.html): Product categories across the portfolio — print, signage, packaging, apparel, promotional.
+- [The DR Difference](https://www.digitalroominc.com/the-dr-difference.html): Positioning and operating model.
+- [Contact Us](https://www.digitalroominc.com/contact-us.html): Corporate contact.
+- [Privacy Policy](https://www.digitalroominc.com/privacy-policy.html): CCPA request-to-know / request-to-delete rights, California "Shine the Light" disclosure, under-16 restriction. Last updated June 27, 2020.
+- [Careers](https://www.digitalroominc.com/careers.html): Open roles, including platform engineering.
+
+## Brand storefronts and their published llms.txt
+- [UPrinting](https://www.uprinting.com/) — [llms.txt](https://www.uprinting.com/llms.txt): Broadest catalog in the portfolio; marketing materials, stickers and labels, packaging, banners and signs, apparel, promotional items.
+- [Signs.com](https://www.signs.com/) — [llms.txt](https://www.signs.com/llms.txt): Custom signs and banners; the llms.txt carries an explicit "For AI Agents" section with intent-routing, material-matching, template and pre-press instructions.
+- [NextDayFlyers](https://www.nextdayflyers.com/) — [llms.txt](https://www.nextdayflyers.com/llms.txt): Fast-turnaround flyers, cards and marketing print.
+- [PrintPlace](https://www.printplace.com/) — [llms.txt](https://www.printplace.com/llms.txt): Commercial print, direct mail and trade-show products.
+- [PrintRunner](https://www.printrunner.com/) — [llms.txt](https://www.printrunner.com/llms.txt): Business cards, stickers, banners and wholesale print.
+- [eSigns](https://www.esigns.com/) — [llms.txt](https://www.esigns.com/llms.txt): Same-day signs and banners; llms.txt includes AI routing instructions for the online design tools.
+- [48HourPrint](https://www.48hourprint.com/) — [llms.txt](https://www.48hourprint.com/llms.txt): Two-day turnaround print.
+- [LogoSportswear](https://www.logosoftwear.com/) — [llms.txt](https://www.logosoftwear.com/llms.txt): Custom apparel, embroidery, screen printing, team stores and uniform programs.
+- [Packlane](https://packlane.com/) — [llms.txt](https://packlane.com/llms.txt): Custom packaging with instant quoting and interactive 3D design previews; llms.txt documents substrates, dielines, flute heights and load limits.
+- [Packola](https://www.packola.com/) — [llms.txt](https://www.packola.com/llms.txt): Custom boxes and packaging.
+
+## Machine-readable surface (measured 2026-08-13)
+- llms.txt: **10 of 10 brand storefronts serve one** (200); the corporate host does not (`https://www.digitalroominc.com/llms.txt` → 404).
+- OpenAPI / Swagger: none. `/openapi.json`, `/openapi.yaml`, `/swagger.json`, `/api-docs` → 404 on every host.
+- MCP: none. `/mcp`, `/api/mcp`, `/sse` → 404/403 on every host.
+- A2A agent card: none. `/.well-known/agent-card.json` and `/.well-known/agent.json` → 404 on every host.
+- `/.well-known/`: nothing served — no security.txt, no OpenID/OAuth metadata, no api-catalog, no ai-plugin.json.
+- Domain security: TLS 1.3 and a valid certificate on the corporate host; **no HSTS**, no DNSSEC, no CAA records; SPF present and DMARC set to `p=reject`.
+- GitHub: the Packlane brand keeps a public organization at https://github.com/Packlane — 14 repositories, mostly forks of Elixir libraries plus a hiring exercise, no public activity since 2021.
+
+## Notes for agents
+- There is no programmatic way to place, price, or track a Digital Room order. Quoting and checkout
+  happen on each brand's website; Signs.com exposes a human [Price Calculator](https://www.signs.com/price-calculator/).
+- The eSigns [broker/reseller program](https://www.esigns.com/signs-101/broker-reseller-program.html)
+  is a discount applied at ordinary checkout — it names no API, data feed, or EDI path.
+- Treat each brand's own `llms.txt` as the authoritative product catalog; this file only indexes them.

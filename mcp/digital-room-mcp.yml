@@ -1,0 +1,50 @@
+generated: '2026-08-13'
+method: probed
+source: live POST of tools/list against candidate MCP paths on the Digital Room corporate host and brand storefronts
+status: none
+note: >-
+  No MCP server. Digital Room publishes no API, so there was no OpenAPI to derive a candidate tool
+  list from either — every path probed returned 404/403 from the storefront, and no vendor
+  documentation, npm package, or registry entry names a Digital Room MCP server. This file records
+  the negative probe ONLY. No `MCPServer` pointer is wired into apis.yml: emitting one would assert
+  an agent surface that does not exist.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+tools: []
+probes:
+- url: https://www.uprinting.com/mcp
+  method: POST tools/list
+  status: 404
+- url: https://www.uprinting.com/api/mcp
+  method: POST tools/list
+  status: 404
+- url: https://www.uprinting.com/sse
+  method: POST tools/list
+  status: 404
+- url: https://www.signs.com/mcp
+  method: POST tools/list
+  status: 301
+  note: trailing-slash redirect that terminates on the WordPress 404 page
+- url: https://www.signs.com/api/mcp
+  method: POST tools/list
+  status: 301
+- url: https://www.digitalroominc.com/mcp
+  method: POST tools/list
+  status: 403
+- url: https://www.digitalroominc.com/api/mcp
+  method: POST tools/list
+  status: 403
+- url: https://packlane.com/mcp
+  method: POST tools/list
+  status: 404
+- url: https://packlane.com/api/mcp
+  method: POST tools/list
+  status: 404
+registry_search:
+  npmjs: 'searched "packlane", "uprinting", "signs-com", "digitalroom" — no first-party MCP or SDK package'
+  pypi: 'https://pypi.org/pypi/packlane/json 404; https://pypi.org/pypi/uprinting/json 404'

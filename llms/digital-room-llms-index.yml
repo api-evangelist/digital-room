@@ -1,0 +1,105 @@
+generated: '2026-08-13'
+method: probed
+source: live GET of /llms.txt on the parent corporate host and every brand storefront named on https://www.digitalroominc.com/our-brands.html
+note: >-
+  Digital Room publishes no llms.txt on its corporate host (www.digitalroominc.com/llms.txt -> 404),
+  but ten of its ten consumer brand storefronts each serve a substantive, hand-authored llms.txt.
+  These are product/content indexes for AI agents and RAG crawlers — several carry explicit
+  "For AI Agents" routing instructions — not developer documentation. No API, OpenAPI, MCP endpoint
+  or agent card was found on any host (see well-known/digital-room-well-known.yml and
+  mcp/digital-room-mcp.yml for those probe records). The llms.txt fleet is Digital Room's only
+  machine-readable agent surface.
+probed: '2026-08-13'
+files:
+- brand: UPrinting
+  host: www.uprinting.com
+  url: https://www.uprinting.com/llms.txt
+  http_status: 200
+  content_type: text/plain; charset=UTF-8
+  bytes: 73061
+  file: digital-room-uprinting-llms.txt
+  has_ai_agent_section: false
+- brand: Signs.com
+  host: www.signs.com
+  url: https://www.signs.com/llms.txt
+  http_status: 200
+  content_type: text/plain; charset=UTF-8
+  bytes: 21505
+  file: digital-room-signs-llms.txt
+  has_ai_agent_section: true
+- brand: NextDayFlyers
+  host: www.nextdayflyers.com
+  url: https://www.nextdayflyers.com/llms.txt
+  http_status: 200
+  content_type: text/plain; charset=UTF-8
+  bytes: 35498
+  file: digital-room-nextdayflyers-llms.txt
+  has_ai_agent_section: false
+- brand: PrintPlace
+  host: www.printplace.com
+  url: https://www.printplace.com/llms.txt
+  http_status: 200
+  content_type: text/plain; charset=UTF-8
+  bytes: 33039
+  file: digital-room-printplace-llms.txt
+  has_ai_agent_section: false
+- brand: PrintRunner
+  host: www.printrunner.com
+  url: https://www.printrunner.com/llms.txt
+  http_status: 200
+  content_type: text/plain; charset=UTF-8
+  bytes: 30499
+  file: digital-room-printrunner-llms.txt
+  has_ai_agent_section: false
+- brand: eSigns
+  host: www.esigns.com
+  url: https://www.esigns.com/llms.txt
+  http_status: 200
+  content_type: text/plain; charset=UTF-8
+  bytes: 22286
+  file: digital-room-esigns-llms.txt
+  has_ai_agent_section: true
+- brand: 48HourPrint
+  host: www.48hourprint.com
+  url: https://www.48hourprint.com/llms.txt
+  http_status: 200
+  content_type: text/plain; charset=UTF-8
+  bytes: 21267
+  file: digital-room-48hourprint-llms.txt
+  has_ai_agent_section: false
+- brand: LogoSportswear
+  host: www.logosoftwear.com
+  url: https://www.logosoftwear.com/llms.txt
+  http_status: 200
+  content_type: text/plain;charset=iso-8859-1
+  bytes: 14259
+  file: digital-room-logosportswear-llms.txt
+  has_ai_agent_section: false
+- brand: Packlane
+  host: packlane.com
+  url: https://packlane.com/llms.txt
+  http_status: 200
+  content_type: text/plain; charset=UTF-8
+  bytes: 12957
+  file: digital-room-packlane-llms.txt
+  has_ai_agent_section: false
+- brand: Packola
+  host: www.packola.com
+  url: https://www.packola.com/llms.txt
+  http_status: 200
+  content_type: text/plain; charset=UTF-8
+  bytes: 12386
+  file: digital-room-packola-llms.txt
+  has_ai_agent_section: false
+misses:
+- url: https://www.digitalroominc.com/llms.txt
+  http_status: 404
+- url: https://www.uprinting.com/llms-full.txt
+  http_status: 404
+- url: https://www.signs.com/llms-full.txt
+  http_status: 404
+coverage:
+  brands_listed: 10
+  brands_serving_llms_txt: 10
+  corporate_host_serving_llms_txt: 0
+  total_bytes: 276757
