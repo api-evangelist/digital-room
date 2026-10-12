@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/digital-room/integrations
+- https://n8n.io/integrations/digital-room/
+- https://composio.dev/toolkits/digital-room
+- https://monid.ai/tools/digital-room
+checked:
+- https://composio.dev/toolkits/digital-room
+- https://monid.ai/tools/digital-room
+- https://n8n.io/integrations/digital-room/
+- https://zapier.com/apps/digital-room/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
